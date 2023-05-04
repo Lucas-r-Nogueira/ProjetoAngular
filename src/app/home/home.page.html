@@ -2,19 +2,16 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Pokemon
-      
+      Pokemon  
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
 
 <ion-content [fullscreen]="true">
   <!-- Bootstrap   Botões do menu(Ionic Docs) -->
   <ion-row>
     <ion-col size="12">
-
-      <ion-segment value="pokemon">
+      <ion-segment value="pokemon" (ionChange)="selecionarCards($event)"> <!-- IonChange chama uma função -->
         <ion-segment-button value="pokemon">
           <ion-label>Pokemon</ion-label>
         </ion-segment-button>
@@ -29,48 +26,51 @@
   </ion-row>
 
   <!-- Bootstrap Cards Desenvolvimento de Sistemas -->
-  <ion-row>
-    <ion-col size="4">
-      <ion-card>
-        <img alt="Silhouette of mountains" src="https://media.gettyimages.com/id/51100698/pt/foto/1999-vulpix-geodude-pidgeot-charizard-onix-staryu-coldeen-zubat-and-psyduck-in-the-animated.jpg?s=612x612&w=0&k=20&c=xYdWXRRXds2tLwdz7sbZKscvo5pGWjcYmrvVGWUWp4c=" />
-        <ion-card-header>
-          <ion-card-title>Charizard Run</ion-card-title>
-          <ion-card-subtitle>Charizard</ion-card-subtitle>
-        </ion-card-header>
-        <ion-card-content>
-          Here's a small text description for the card content. Nothing more, nothing less.
-        </ion-card-content>
-      </ion-card> 
-    </ion-col>
+  <ng-container *ngIf="this.item_selecionado == 'pokemon'">
+    <ion-row>
+      <ion-col size="4">
+        <ion-card>
+          <img alt="Silhouette of mountains" src="https://media.gettyimages.com/id/51100698/pt/foto/1999-vulpix-geodude-pidgeot-charizard-onix-staryu-coldeen-zubat-and-psyduck-in-the-animated.jpg?s=612x612&w=0&k=20&c=xYdWXRRXds2tLwdz7sbZKscvo5pGWjcYmrvVGWUWp4c=" />
+          <ion-card-header>
+            <ion-card-title>Charizard Run</ion-card-title>
+            <ion-card-subtitle>Charizard</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            Here's a small text description for the card content. Nothing more, nothing less.
+          </ion-card-content>
+        </ion-card> 
+      </ion-col>
 
-    <ion-col size="4">
-      <ion-card>
-        <img alt="Silhouette of mountains" src="https://media.gettyimages.com/id/51100698/pt/foto/1999-vulpix-geodude-pidgeot-charizard-onix-staryu-coldeen-zubat-and-psyduck-in-the-animated.jpg?s=612x612&w=0&k=20&c=xYdWXRRXds2tLwdz7sbZKscvo5pGWjcYmrvVGWUWp4c=" />
-        <ion-card-header>
-          <ion-card-title>Charizard Run</ion-card-title>
-          <ion-card-subtitle>Charizard</ion-card-subtitle>
-        </ion-card-header>
-        <ion-card-content>
-          Here's a small text description for the card content. Nothing more, nothing less.
-        </ion-card-content>
-      </ion-card> 
-    </ion-col>
+      <ion-col size="4">
+        <ion-card>
+          <img alt="Silhouette of mountains" src="https://media.gettyimages.com/id/51100698/pt/foto/1999-vulpix-geodude-pidgeot-charizard-onix-staryu-coldeen-zubat-and-psyduck-in-the-animated.jpg?s=612x612&w=0&k=20&c=xYdWXRRXds2tLwdz7sbZKscvo5pGWjcYmrvVGWUWp4c=" />
+          <ion-card-header>
+            <ion-card-title>Charizard Run</ion-card-title>
+            <ion-card-subtitle>Charizard</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            Here's a small text description for the card content. Nothing more, nothing less.
+          </ion-card-content>
+        </ion-card> 
+      </ion-col>
 
-    <ion-col size="4">
-      <ion-card>
-        <img alt="Silhouette of mountains" src="https://media.gettyimages.com/id/51100698/pt/foto/1999-vulpix-geodude-pidgeot-charizard-onix-staryu-coldeen-zubat-and-psyduck-in-the-animated.jpg?s=612x612&w=0&k=20&c=xYdWXRRXds2tLwdz7sbZKscvo5pGWjcYmrvVGWUWp4c=" />
-        <ion-card-header>
-          <ion-card-title>Charizard Run</ion-card-title>
-          <ion-card-subtitle>Charizard</ion-card-subtitle>
-        </ion-card-header>
-        <ion-card-content>
-          Here's a small text description for the card content. Nothing more, nothing less.
-        </ion-card-content>
-      </ion-card> 
-    </ion-col>
-  </ion-row>
+      <ion-col size="4">
+        <ion-card>
+          <img alt="Silhouette of mountains" src="https://media.gettyimages.com/id/51100698/pt/foto/1999-vulpix-geodude-pidgeot-charizard-onix-staryu-coldeen-zubat-and-psyduck-in-the-animated.jpg?s=612x612&w=0&k=20&c=xYdWXRRXds2tLwdz7sbZKscvo5pGWjcYmrvVGWUWp4c=" />
+          <ion-card-header>
+            <ion-card-title>Charizard Run</ion-card-title>
+            <ion-card-subtitle>Charizard</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            Here's a small text description for the card content. Nothing more, nothing less.
+          </ion-card-content>
+        </ion-card> 
+      </ion-col>
+    </ion-row>
+  </ng-container>
 
     <!-- Bootstrap Cards Infomática para Internet -->
+  <ng-container *ngIf="this.item_selecionado == 'pokemon_adventure'">
     <ion-row>
       <ion-col size="4">
         <ion-card>
@@ -114,49 +114,52 @@
         </ion-card> 
       </ion-col>
     </ion-row>
-
+  </ng-container>
       <!-- Bootstrap Cards Quimica -->
-  <ion-row>
-    <ion-col size="4">
-      <ion-card>
-        <img alt="Silhouette of mountains" src="https://media.gettyimages.com/id/51100701/pt/foto/1999-cubone-raichu-snubble-and-marrill-in-the-animated-movie-pokemon-the-first-movie.jpg?s=612x612&w=0&k=20&c=p0hYMkb4lAKtAX99C4J56-lKEvGNncE-cUGIVafEA-o=" />
-        <ion-card-header>
-          <ion-card-title>Raichu</ion-card-title>
-          <ion-card-subtitle>Raichu Happy</ion-card-subtitle>
-        </ion-card-header>
-    
-        <ion-card-content>
-          Here's a small text description for the card content. Nothing more, nothing less.
-        </ion-card-content>
-      </ion-card> 
-    </ion-col>
+  <ng-container *ngIf="this.item_selecionado == 'pokemon_at_home'">
+    <ion-row>
+      <ion-col size="4">
+        <ion-card>
+          <img alt="Silhouette of mountains" src="https://media.gettyimages.com/id/51100701/pt/foto/1999-cubone-raichu-snubble-and-marrill-in-the-animated-movie-pokemon-the-first-movie.jpg?s=612x612&w=0&k=20&c=p0hYMkb4lAKtAX99C4J56-lKEvGNncE-cUGIVafEA-o=" />
+          <ion-card-header>
+            <ion-card-title>Raichu</ion-card-title>
+            <ion-card-subtitle>Raichu Happy</ion-card-subtitle>
+          </ion-card-header>
+      
+          <ion-card-content>
+            Here's a small text description for the card content. Nothing more, nothing less.
+          </ion-card-content>
+        </ion-card> 
+      </ion-col>
 
-    <ion-col size="4">
-      <ion-card>
-        <img alt="Silhouette of mountains" src="https://media.gettyimages.com/id/51100701/pt/foto/1999-cubone-raichu-snubble-and-marrill-in-the-animated-movie-pokemon-the-first-movie.jpg?s=612x612&w=0&k=20&c=p0hYMkb4lAKtAX99C4J56-lKEvGNncE-cUGIVafEA-o=" />
-        <ion-card-header>
-          <ion-card-title>Raichu</ion-card-title>
-          <ion-card-subtitle>Raichu Happy</ion-card-subtitle>
-        </ion-card-header>
-    
-        <ion-card-content>
-          Here's a small text description for the card content. Nothing more, nothing less.
-        </ion-card-content>
-      </ion-card> 
-    </ion-col>
+      <ion-col size="4">
+        <ion-card>
+          <img alt="Silhouette of mountains" src="https://media.gettyimages.com/id/51100701/pt/foto/1999-cubone-raichu-snubble-and-marrill-in-the-animated-movie-pokemon-the-first-movie.jpg?s=612x612&w=0&k=20&c=p0hYMkb4lAKtAX99C4J56-lKEvGNncE-cUGIVafEA-o=" />
+          <ion-card-header>
+            <ion-card-title>Raichu</ion-card-title>
+            <ion-card-subtitle>Raichu Happy</ion-card-subtitle>
+          </ion-card-header>
+      
+          <ion-card-content>
+            Here's a small text description for the card content. Nothing more, nothing less.
+          </ion-card-content>
+        </ion-card> 
+      </ion-col>
 
-    <ion-col size="4">
-      <ion-card>
-        <img alt="Silhouette of mountains" src="https://media.gettyimages.com/id/51100701/pt/foto/1999-cubone-raichu-snubble-and-marrill-in-the-animated-movie-pokemon-the-first-movie.jpg?s=612x612&w=0&k=20&c=p0hYMkb4lAKtAX99C4J56-lKEvGNncE-cUGIVafEA-o=" />
-        <ion-card-header>
-          <ion-card-title>Raichu</ion-card-title>
-          <ion-card-subtitle>Raichu Happy</ion-card-subtitle>
-        </ion-card-header>
-    
-        <ion-card-content>
-          Here's a small text description for the card content. Nothing more, nothing less.
-        </ion-card-content>
-      </ion-card> 
-    </ion-col>
-  </ion-row>
+      <ion-col size="4">
+        <ion-card>
+          <img alt="Silhouette of mountains" src="https://media.gettyimages.com/id/51100701/pt/foto/1999-cubone-raichu-snubble-and-marrill-in-the-animated-movie-pokemon-the-first-movie.jpg?s=612x612&w=0&k=20&c=p0hYMkb4lAKtAX99C4J56-lKEvGNncE-cUGIVafEA-o=" />
+          <ion-card-header>
+            <ion-card-title>Raichu</ion-card-title>
+            <ion-card-subtitle>Raichu Happy</ion-card-subtitle>
+          </ion-card-header>
+      
+          <ion-card-content>
+            Here's a small text description for the card content. Nothing more, nothing less.
+          </ion-card-content>
+        </ion-card> 
+      </ion-col>
+    </ion-row>
+  </ng-container>
+
 </ion-content>
